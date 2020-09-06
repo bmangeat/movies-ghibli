@@ -5,6 +5,7 @@ import {MovieContext} from "../states/MovieContext"
 import Movie from "./Movie"
 
 const MoviesList = () => {
+    // eslint-disable-next-line no-unused-vars
     const [movies, setMovies] = useContext(MovieContext)
 
     return (

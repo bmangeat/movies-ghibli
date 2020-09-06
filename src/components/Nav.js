@@ -4,7 +4,8 @@ import React, {useContext} from "react"
 import {MovieContext} from "../states/MovieContext"
 
 const Nav = () => {
-    const [movies, getMovies] = useContext(MovieContext)
+    // eslint-disable-next-line no-unused-vars
+    const [movies, setMovies] = useContext(MovieContext)
     return (
         <div>
             <h2>Logo</h2>
