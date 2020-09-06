@@ -1,28 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
+
+// Import components
+import { MovieProvider } from "./states/MovieContext"
+import MoviesList from "./components/MoviesList"
+import Nav from "./components/Nav"
 
 const App = () => {
 
-    useEffect(
-        () => {
-            fetchData()
-        },
-        []
-    )
-
-
-    const [ movies, setMovies ] = useState( [] )
-
-    const fetchData = async () => {
-        const fetchData = await fetch( 'https://ghibliapi.herokuapp.com/films' )
-        const data = await fetchData.json()
-        setMovies(data)
-    }
-
     return (
-        <div className="App">
-
-        </div>
+        <MovieProvider>
+            <div className="App">
+                <Nav/>
+                <MoviesList/>
+            </div>
+        </MovieProvider>
     );
 }
 
