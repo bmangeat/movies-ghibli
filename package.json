@@ -33,7 +33,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/react-movies-ghibli",
+  "homepage": "/",
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.1.0"
   }
