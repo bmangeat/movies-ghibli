@@ -1,10 +1,9 @@
 import React from 'react'
 import './styles/App.scss'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // Import states
 import { MovieProvider } from "./states/MovieContext"
-import RouteContext from "./states/RouteContext"
 
 
 // Import components
@@ -19,13 +18,17 @@ const App = () => {
                 <MovieProvider>
                     <Nav/>
                 </MovieProvider>
+
                 <Switch>
                     <Route path={'/'} exact component={Home}/>
-                    <RouteContext path="/movies" contextComponent={MovieProvider} component={MoviesList}/>
+                    <MovieProvider>
+                        <Route path={'/movies'} component={MoviesList}/>
+                    </MovieProvider>
                 </Switch>
             </Router>
         </div>
-    );
+    )
 }
+
 
 export default App;
