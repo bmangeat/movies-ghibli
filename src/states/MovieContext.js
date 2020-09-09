@@ -13,6 +13,7 @@ export const MovieProvider = ( props ) => {
     )
 
 
+
     const fetchData = () => {
         let moviesFromApi = []
         fetch( 'https://ghibliapi.herokuapp.com/films' )
