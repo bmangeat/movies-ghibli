@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // Import states
 import { MovieProvider } from "./states/MovieContext"
+import {FilteredMovieProvider} from "./states/FilteredMovieContext"
 
 
 // Import components
@@ -15,16 +16,19 @@ const App = () => {
     return (
         <div className="App">
             <Router>
-                <MovieProvider>
-                    <Nav/>
-                </MovieProvider>
+                <FilteredMovieProvider>
 
-                <Switch>
-                    <Route path={'/'} exact component={Home}/>
                     <MovieProvider>
-                        <Route path={'/movies'} component={MoviesList}/>
+                        <Nav/>
                     </MovieProvider>
-                </Switch>
+
+                    <Switch>
+                        <Route path={'/'} exact component={Home}/>
+                        <MovieProvider>
+                            <Route path={'/movies'} component={MoviesList}/>
+                        </MovieProvider>
+                    </Switch>
+                </FilteredMovieProvider>
             </Router>
         </div>
     )

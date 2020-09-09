@@ -1,9 +1,11 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { MovieContext } from "../states/MovieContext"
-import Movie from "./Movie"
+import { FilteredMovieContext } from "../states/FilteredMovieContext"
 
 const SearchBar = () => {
-    const [ filteredMovies, setFilteredMovies ] = useState( [] )
+    // eslint-disable-next-line no-unused-vars
+    const [ filteredMovies, setFilteredMovies ] = useContext( FilteredMovieContext )
+    // eslint-disable-next-line no-unused-vars
     const [ movies, setMovies ] = useContext( MovieContext )
 
     const filterByName = ( obj, e ) => {
